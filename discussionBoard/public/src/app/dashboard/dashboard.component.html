@@ -1,0 +1,42 @@
+<style media="screen">
+  .container{
+    width: 550px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    text-align:center
+  }
+  table{
+    margin: auto;
+  }
+</style>
+
+
+<h1>Hi, {{name}}!</h1>
+<a [routerLink]="['/topic']">Add a Question</a>
+<br>
+
+<div class="container">
+  <table>
+    <tr>
+      <th>Question</th>
+      <th>Answer</th>
+      <th>Action</th>
+
+    </tr>
+    <tr *ngFor='let question of questions, let i = index'>
+      <td>{{question.question}}</td>
+      <td>{{question.answers.length}}</td>
+      <td><a [routerLink]="['/user', question._id]">Show</a> | <a [routerLink]="['/answer', question._id]">Answer</a></td>
+
+    </tr>
+  </table>
+
+</div>
+
+<br>
+
+
+
+
+<button (click)='logOut()'>Log Out</button>

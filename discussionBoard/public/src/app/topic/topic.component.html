@@ -1,0 +1,10 @@
+
+<h1>New Question</h1>
+
+<form (submit)="addquestion()" #myForm='ngForm'>
+  <input type="text" name="question" placeholder="Question" [(ngModel)] ="question.question" required>
+  <input type="text" name="description" placeholder="Description" [(ngModel)] ="question.description" required>
+  <button [disabled]="!myForm.valid">Submit</button>
+
+
+</form>

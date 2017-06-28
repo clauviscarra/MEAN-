@@ -1,0 +1,5 @@
+<h1>Q & A</h1>
+<form (submit)="login()" #myForm='ngForm'>
+  <input type="text" name="name" placeholder="Your Name Here"[(ngModel)]="user.name" required>
+  <button type="submit" [disabled]="!myForm.valid">Enter</button>
+</form>

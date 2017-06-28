@@ -1,0 +1,8 @@
+<h2>{{question.question}}</h2>
+<p>{{question.description}}</p>
+
+<form (submit)="create()" #myForm='ngForm'>
+  <input type="text" name="answer" placeholder="answer" [(ngModel)]= "answer.answer" required>
+  <input type="text" name="details" placeholder="details"[(ngModel)]= "answer.details" required>
+  <input type="submit" [disabled]="!myForm.valid" value="Submit">
+</form>
