@@ -11,4 +11,6 @@ var AppointmentSchema = new mongoose.Schema({
 	_user: {type: mongoose.Schema.Types.ObjectId, ref: 'User'}
 })
 
+
+
 mongoose.model("Appointment", AppointmentSchema);

@@ -25,7 +25,6 @@ export class LoginComponent implements OnInit {
   .then((data)=>{
     if(data.login){
       alert("success!")
-      console.log(data.user.name)
       Cookie.set("name", data.user.name)
       this._router.navigateByUrl('dashboard')
     }

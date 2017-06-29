@@ -9,7 +9,6 @@ function AppointmentsController(){
         console.log(err)
       }
       else{
-        console.log(appointments)
         res.json(appointments)
       }
     })
@@ -21,9 +20,8 @@ function AppointmentsController(){
     console.log(req.body.date)
     var date = new Date(req.body.date)
     var today = new Date();
-    console.log(date, today)
     if (date < today){
-      console.log(err)
+      
       res.json({error:true, messages:"You can only set appointments in the future."})
     }
     else{

@@ -30,6 +30,7 @@ export class AppointmentComponent implements OnInit {
         alert(data.messages)
       }
       else{
+        console.log(data)
         this._router.navigateByUrl('dashboard')
       }
 
