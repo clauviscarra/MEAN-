@@ -1,0 +1,8 @@
+<h1>Doctor's Appointment</h1>
+<form (submit)="login()" #myForm='ngForm'>
+  <input type="text" name="name" placeholder="Your Name Here"
+  [(ngModel)]="user.name"
+  minlength="3" 
+  required>
+  <button type="submit" [disabled]="!myForm.valid">Enter</button>
+</form>

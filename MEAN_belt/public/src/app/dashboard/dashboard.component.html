@@ -1,0 +1,48 @@
+<style media="screen">
+  .container{
+    width: 550px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    text-align:center
+  }
+  table{
+    margin: auto;
+  }
+  .red{
+    font-size: 12px;
+    color: red;
+  }
+  .date{
+    font-size: 12px;
+  }
+</style>
+<h3>Hi {{name}}!</h3>
+<h1>Doctor's Appointments</h1>
+
+<div class="container">
+  <table>
+    <tr>
+      <th>Date</th>
+      <th>Time</th>
+      <th>Patient Name</th>
+      <th>Complaint</th>
+      <th></th>
+    </tr>
+    <tr *ngFor = 'let appointment of appointments'>
+      <td class="date">{{appointment.date | date}}</td>
+      <td class="date">{{appointment.time}}</td>
+      <td class="date">{{appointment.user}}</td>
+      <td class='red'>{{appointment.complaint}}</td>
+      <td *ngIf = 'appointment.user == name'> <a [routerLink]="['/remove', appointment._id]">Cancel</a>
+    </tr>
+  </table>
+
+<br>
+
+</div>
+
+<br>
+
+
+    <button [routerLink]="['/appointment']"> Add New Appointment</button> | <button (click)="logOut()">Log Out</button>

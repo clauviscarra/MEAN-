@@ -24,7 +24,7 @@
       <th>Action</th>
 
     </tr>
-    <tr *ngFor='let question of questions, let i = index'>
+    <tr *ngFor='let question of questions'>
       <td>{{question.question}}</td>
       <td>{{question.answers.length}}</td>
       <td><a [routerLink]="['/user', question._id]">Show</a> | <a [routerLink]="['/answer', question._id]">Answer</a></td>
